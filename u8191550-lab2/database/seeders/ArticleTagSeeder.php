@@ -4,20 +4,19 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\ArticleTag;
 
-class DatabaseSeeder extends Seeder
+class ArticleTagSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        $this->call([
-            ArticleSeeder::class,
-            TagSeeder::class,
-            ArticleTagSeeder::class
-        ]);
+        ArticleTag::factory()
+                ->count(100)
+                ->create();
     }
 }
